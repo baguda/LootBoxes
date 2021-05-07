@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  
+  
+  <ThingDef ParentName="BuildingBase"> 
+    <defName>LootBoxTest</defName>
+    <label>LootBoxTest</label>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>dev/lootbox</texPath>
+      <graphicClass>lootBox.Graphic_Searched</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>00</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>0.0</fillPercent>
+    <castEdgeShadows>false</castEdgeShadows>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Flammability>1.0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <description>Box O Loot</description>
+    <canOverlapZones>true</canOverlapZones>
+	
+    <selectable>true</selectable>
+    <size>(1,1)</size>
+    <comps>
+	<li Class="LootBox.CompProperties_LootBox">
+	
+		<StaticDropGroup>
+			<li>
+				<thingDefName>MeleeWeapon_Knife</thingDefName>
+				<stuffDefName>Silver</stuffDefName>
+				<quality>Poor</quality>
+			</li>
+			<li>
+				<thingDefName>Silver</thingDefName>
+				<count>75</count>
+			</li>			
+		</StaticDropGroup>
+		<RandomDropGroup>
+			<li>
+				<thingDefName>MeleeWeapon_Spear</thingDefName>
+				<stuffDefName>Silver</stuffDefName>
+			</li>
+			<li>
+				<thingDefName>Silver</thingDefName>
+				<count>500</count>
+			</li>
+		</RandomDropGroup>	
+
+		<RandomDropCountRange>3~4</RandomDropCountRange>
+		<OpeningSound>Door_OpenManual</OpeningSound>
+		<selfDestruct>false</selfDestruct>
+		<isProxy>false</isProxy>
+		<isDamageSwitch>false</isDamageSwitch>
+		<DamagePercent>50</DamagePercent>
+		<proxyRadius>10</proxyRadius>
+		<SearchRadius>3</SearchRadius>
+		<isSearched>true</isSearched> 
+		<ButtonLabel>Search</ButtonLabel>
+		<ButtonGraphicPath>dev/lootbox</ButtonGraphicPath>
+		<ButtonDesc>Search the Chest</ButtonDesc>
+		<makeSmoke>true</makeSmoke>
+		<smokeColor>(1,1,1)</smokeColor>
+		<isPhotoSwitch>false</isPhotoSwitch>
+		<usePhotoGreaterThan>true</usePhotoGreaterThan>
+		<photoThreshold>0.5</photoThreshold>
+      </li>
+  
+    </comps>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <staticSunShadowHeight>0.3</staticSunShadowHeight>
+    <designationHotKey>Misc3</designationHotKey>
+	<designationCategory>Misc</designationCategory>
+  </ThingDef>
+  
+</Defs>
